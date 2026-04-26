@@ -4,124 +4,32 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- Chatroom styles -->
+  <!-- Chatroom styles via jsDelivr -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/dist/Chatroom.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/index.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/themes/theme2.css" />
-
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #e5ddd5;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    }
-
-    /* Chat container like WhatsApp window */
-    .chat-container {
-      width: 420px;
-      height: 650px;
-      background: #efeae2;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Header (WhatsApp green) */
-    .chat-container header {
-      background: #075e54;
-      color: white;
-      padding: 14px;
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    /* Messages area */
-    .chat-container .messages {
-      flex: 1;
-      padding: 10px;
-      overflow-y: auto;
-      background: url("https://i.imgur.com/5GQX0QZ.png");
-      background-size: cover;
-    }
-
-    /* Chat bubbles */
-    .chat-container .message {
-      max-width: 75%;
-      padding: 8px 12px;
-      margin: 6px 0;
-      border-radius: 8px;
-      font-size: 14px;
-      line-height: 1.4;
-      word-wrap: break-word;
-    }
-
-    /* Bot messages */
-    .chat-container .message.bot {
-      background: #ffffff;
-      align-self: flex-start;
-      border-top-left-radius: 0;
-    }
-
-    /* User messages */
-    .chat-container .message.user {
-      background: #dcf8c6;
-      align-self: flex-end;
-      border-top-right-radius: 0;
-    }
-
-    /* Input area */
-    .chat-container input {
-      border: none;
-      padding: 12px;
-      width: 100%;
-      outline: none;
-      font-size: 14px;
-    }
-
-    .chat-container .input-container {
-      display: flex;
-      border-top: 1px solid #ddd;
-      background: #f0f0f0;
-    }
-
-    .chat-container button {
-      background: #075e54;
-      color: white;
-      border: none;
-      padding: 0 16px;
-      cursor: pointer;
-    }
-  </style>
 </head>
-
 <body>
   <div class="chat-container"></div>
 
+  <!-- Chatroom script via jsDelivr -->
   <script src="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/dist/Chatroom.js"></script>
 
   <script>
+    // Fail-fast hint if the script didn't load
     if (!window.Chatroom) {
-      document.body.insertAdjacentHTML(
-        'beforeend',
-        '<div style="padding:12px;color:#fff;background:#c00">Could not load Chatroom.js</div>'
-      );
+      document.body.insertAdjacentHTML('beforeend',
+        '<div style="padding:12px;color:#fff;background:#c00">Could not load Chatroom.js</div>');
     }
 
     var chatroom = new window.Chatroom({
-      host: "https://refactored-rotary-phone-wv7v469p76j6h95j-5005.app.github.dev/",
-      title: "WhatsApp Bot",
+      host: "https://redesigned-guacamole-jr5rg64vjr7g3qgpx-5005.app.github.dev/",
+      title: "Chat with a bot",
       container: document.querySelector(".chat-container"),
-      welcomeMessage: "Hey 👋 I am online!",
+      welcomeMessage: "Nice to meet you.",
       speechRecognition: "en-US",
       voiceLang: "en-US"
     });
-
     chatroom.openChat();
   </script>
 </body>
