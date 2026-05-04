@@ -1,124 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Weather Bot</title>
-
-  <!-- Chatroom -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/dist/Chatroom.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/index.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/themes/theme2.css" />
-
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #e9eef5;
-      font-family: Arial, sans-serif;
-    }
-
-    /* 📱 App Card Container */
-    .chat-container {
-      width: 380px;
-      height: 600px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* 🌤️ Header like app UI */
-    .title {
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
-      color: white;
-      padding: 16px;
-      font-size: 18px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    /* 💬 chat area styling */
-    .messages {
-      flex: 1;
-      padding: 10px;
-      background: #f7f9fc;
-    }
-
-    /* user bubble */
-    .user-message {
-      background: #4facfe;
-      color: white;
-      padding: 10px 14px;
-      border-radius: 18px 18px 4px 18px;
-      margin: 6px 0;
-      max-width: 75%;
-      align-self: flex-end;
-    }
-
-    /* bot bubble */
-    .bot-message {
-      background: #ffffff;
-      color: #333;
-      padding: 10px 14px;
-      border-radius: 18px 18px 18px 4px;
-      margin: 6px 0;
-      max-width: 75%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    /* input bar */
-    .input-area {
-      display: flex;
-      padding: 10px;
-      border-top: 1px solid #eee;
-      background: white;
-    }
-
-    .input-area input {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      outline: none;
-      border-radius: 20px;
-      background: #f1f3f6;
-    }
-
-    .input-area button {
-      margin-left: 8px;
-      background: #4facfe;
-      border: none;
-      color: white;
-      padding: 10px 14px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.statically.io/gh/weberi/chatroom/master/dist/Chatroom.css" />
+  <link rel="stylesheet" href="https://cdn.statically.io/gh/weberi/chatroom/master/index.css" />
+  <link rel="stylesheet" href="https://cdn.statically.io/gh/weberi/chatroom/master/themes/theme2.css" />
 </head>
 
 <body>
-
   <div class="chat-container"></div>
 
-  <script src="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/dist/Chatroom.js"></script>
+  <script src="https://cdn.statically.io/gh/weberi/chatroom/master/dist/Chatroom.js"/></script>
+  <script type="text/javascript">
 
-  <script>
     var chatroom = new window.Chatroom({
       host: "https://didactic-winner-vpvp54g96vvwhw6j5-5005.app.github.dev",
-      title: "🌤️ Weather Assistant",
+      title: "Weatherbot",
       container: document.querySelector(".chat-container"),
-      welcomeMessage: "Hi! Ask me about weather ☀️🌧️",
+      welcomeMessage: "Hi, I am a Weatherbot.",
       speechRecognition: "en-US",
       voiceLang: "en-US"
     });
-
     chatroom.openChat();
-  </script>
 
+  </script>
 </body>
-</html>
