@@ -3,34 +3,83 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Chatbot</title>
 
-  <!-- Chatroom styles via jsDelivr -->
+  <!-- Chat UI -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/dist/Chatroom.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/index.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/themes/theme2.css" />
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to top, #4facfe, #00f2fe);
+    }
+
+    /* 🌧️ animated rain */
+    .rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://i.ibb.co/6b4cG5t/rain.png");
+      animation: rain 0.3s linear infinite;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    @keyframes rain {
+      from { background-position: 0 0; }
+      to { background-position: 20% 100%; }
+    }
+
+    /* chat container glass style */
+    .chat-container {
+      width: 380px;
+      height: 520px;
+      margin: 40px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+      position: relative;
+      z-index: 2;
+    }
+
+    .title {
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      color: white;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
+
+  <!-- 🌧️ rain layer -->
+  <div class="rain"></div>
+
   <div class="chat-container"></div>
 
-  <!-- Chatroom script via jsDelivr -->
   <script src="https://cdn.jsdelivr.net/gh/weberi/chatroom@master/dist/Chatroom.js"></script>
 
   <script>
-    // Fail-fast hint if the script didn't load
-    if (!window.Chatroom) {
-      document.body.insertAdjacentHTML('beforeend',
-        '<div style="padding:12px;color:#fff;background:#c00">Could not load Chatroom.js</div>');
-    }
-
     var chatroom = new window.Chatroom({
       host: "https://didactic-winner-vpvp54g96vvwhw6j5-5005.app.github.dev",
-      title: "Chat with a bot",
+      title: "🌤️ Weather Bot",
       container: document.querySelector(".chat-container"),
-      welcomeMessage: "Nice to meet you.",
+      welcomeMessage: "Hi! Ask me about weather 🌦️",
       speechRecognition: "en-US",
       voiceLang: "en-US"
     });
+
     chatroom.openChat();
   </script>
+
 </body>
 </html>
